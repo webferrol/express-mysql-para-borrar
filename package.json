@@ -1,0 +1,20 @@
+{
+  "name": "mariscos-tonio",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx nodemon index.js"
+  },
+  "keywords": [
+    "tienda online",
+    "mariscos"
+  ],
+  "author": "Xurxo",
+  "license": "",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.3"
+  }
+}
