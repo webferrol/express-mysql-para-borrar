@@ -1,45 +1,22 @@
 import express from 'express'
-const router = express.Router()
+import artigosController from '../controllers/ArtigosController.js'
 
+const router = express.Router()
 
 router.get(
     '/',
-    (_, res) => {
-        res.send('Todos los artículos')
-    }
+    artigosController.consultarArtigos 
 )
 
 router.post(
     '/',
-    (_, res) => {
-        res.send('Crear un artigo')
-    }
+   artigosController.crearArtigo
 )
 
 router.route('/:codigo')
-    .get((req, res) => {
-        const id = req.params.codigo
-        res.json({
-            message: 'Detalle dun artigo',
-            cod: id
-        })
-    })
-    .delete((req, res) => {
-        const id = req.params.codigo
-        res.json({
-            message: 'Eliminar artigo',
-            cod: id
-        })
-    })
-    .put((req, res) => {
-        const id = req.params.codigo
-        res.json({
-            message: 'Actualizar artigo',
-            cod: id
-        })
-    })
-
-
+    .get(artigosController.verDetalleArtigo)
+    .delete(artigosController.elimarArtigo)
+    .put(artigosController.actualizarArtigo)
 
 
 export default router
