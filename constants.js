@@ -1,4 +1,4 @@
-export const PORT = 4321 // exportanción nombrada
+export const PORT = process.env.PORT || 4321 
 
 export const ROUTERS = {
     home: '/',
